@@ -48,9 +48,28 @@ let g:molokai_original = 1
 "Status bar
 set laststatus=2
 
-"CtrlP
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/build,*/bin
+"Shortcuts
+nmap <C-t> :tabnew <CR>
 
+"C/C++ compiling
+set makeprg=mingw32-make
+set errorformat^=%-GIn\ file\ included\ %.%# 
+
+function! Build() 
+	let savepath = getcwd()
+
+	execute ":w"
+	execute ":cd " . "build"
+	execute ":make"
+	execute ":cd " . savepath
+	execute ":cw"
+endfunction
+
+au FileType cpp nmap <C-b> :call Build() <CR>
+
+"CtrlP
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/build,*/bin
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': [],
   \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
@@ -58,7 +77,7 @@ let g:ctrlp_prompt_mappings = {
 
 "Go
 au FileType go nmap <C-g>r <Plug>(go-run)
-au FileType go nmap <C-g>b <Plug>(go-build)
+au FileType go nmap <C-b> <Plug>(go-build)
 au FileType go nmap <C-g>t <Plug>(go-test)
 au FileType go nmap <C-g>c <Plug>(go-coverage)
 
