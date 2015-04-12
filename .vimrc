@@ -6,7 +6,9 @@ set guioptions-=L
 
 if has("gui_running")
 	set lines=999 columns=999
-	set guifont=Consolas:h11:cANSI
+	if has("win32")
+		set guifont=Consolas:h11:cANSI
+	endif
 endif
 
 "Basic settings
