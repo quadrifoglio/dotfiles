@@ -36,6 +36,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'fatih/vim-go'
 Plugin 'bling/vim-airline'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -50,6 +51,13 @@ set laststatus=2
 
 "Shortcuts
 nmap <C-t> :tabnew <CR>
+nmap <C-S-Left> :tabprev <CR>
+nmap <C-S-Right> :tabnext <CR>
+
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
 "C/C++ compiling
 set makeprg=mingw32-make
@@ -70,10 +78,6 @@ au FileType cpp nmap <C-b> :call Build() <CR>
 "CtrlP
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/build,*/bin
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("e")': [],
-  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
-  \ }
 
 "Go
 au FileType go nmap <C-g>r <Plug>(go-run)
