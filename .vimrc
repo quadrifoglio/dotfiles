@@ -39,6 +39,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'fatih/vim-go'
 Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -66,13 +68,11 @@ set makeprg=mingw32-make
 set errorformat^=%-GIn\ file\ included\ %.%# 
 
 function! Build() 
-	let savepath = getcwd()
-
-	execute ":w"
-	execute ":cd " . "build"
-	execute ":make"
-	execute ":cd " . savepath
-	execute ":cw"
+	if has("win32")
+		execute "!build.bat"
+	else
+		execute "!./build.sh"
+	endif
 endfunction
 
 au FileType cpp nmap <C-b> :call Build() <CR>
