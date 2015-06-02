@@ -54,9 +54,12 @@ let g:molokai_original = 1
 set laststatus=2
 
 "Shortcuts
-nmap <C-t> :tabnew <CR>
-nmap <C-S-Left> :tabprev <CR>
-nmap <C-S-Right> :tabnext <CR>
+nmap <S-t> :tabnew <CR>
+nmap <S-Left> :tabprev <CR>
+nmap <S-Right> :tabnext <CR>
+
+nmap <silent> <C-S-Left> :bprevious<CR>
+nmap <silent> <C-S-Right> :bnext<CR>
 
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
@@ -64,18 +67,13 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 "C/C++ compiling
-set makeprg=mingw32-make
-set errorformat^=%-GIn\ file\ included\ %.%# 
+if has("win32")
+	set makeprg=mingw32-make
+else
+	set makeprg=make
+endif
 
-function! Build() 
-	if has("win32")
-		execute "!build.bat"
-	else
-		execute "!./build.sh"
-	endif
-endfunction
-
-au FileType cpp nmap <C-b> :call Build() <CR>
+au FileType cpp nmap <C-b> :make -j5 <CR>
 
 "CtrlP
 let g:ctrlp_working_path_mode = 'ra'
