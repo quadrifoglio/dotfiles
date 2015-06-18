@@ -8,6 +8,8 @@ if has("gui_running")
 	set lines=999 columns=999
 	if has("win32")
 		set guifont=Consolas:h11:cANSI
+	else
+		set guifont=Inconsolata\ 12
 	endif
 endif
 
