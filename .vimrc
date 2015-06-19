@@ -24,11 +24,10 @@ set noexpandtab
 set encoding=utf-8
 set fileformat=unix
 set fileformats=unix,dos
-filetype off
 
 "Plugins
+filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-set rtp+=$GOROOT/misc/vim
 let path='~/.vim/bundle'
 call vundle#begin(path)
 
@@ -46,9 +45,9 @@ Plugin 'wting/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
-syntax on
 
 "Color
+syntax on
 colorscheme molokai
 let g:molokai_original = 1
 
@@ -82,8 +81,13 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/build,*/bin
 
 "Go
-au FileType go nmap <C-g>r <Plug>(go-run)
+au FileType go nmap <C-r> <Plug>(go-run)
 au FileType go nmap <C-b> <Plug>(go-build)
-au FileType go nmap <C-g>t <Plug>(go-test)
-au FileType go nmap <C-g>c <Plug>(go-coverage)
+au FileType go nmap <C-t> <Plug>(go-test)
+au FileType go nmap <C-c> <Plug>(go-coverage)
 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
