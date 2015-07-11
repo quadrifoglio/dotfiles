@@ -8,8 +8,6 @@ if has("gui_running")
 	set lines=999 columns=999
 	if has("win32")
 		set guifont=Consolas:h11:cANSI
-	else
-		set guifont=Inconsolata\ 12
 	endif
 endif
 
@@ -24,6 +22,7 @@ set noexpandtab
 set encoding=utf-8
 set fileformat=unix
 set fileformats=unix,dos
+set nowrap
 
 "Plugins
 filetype off
@@ -74,13 +73,14 @@ else
 	set makeprg=make
 endif
 
-au FileType cpp nmap <C-b> :make -j5 <CR>
+au FileType cpp nmap <C-b> :!sh build.sh <CR>
 
 "CtrlP
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/build,*/bin
 
 "Go
+au FileType go nmap <C-i> <Plug>(go-install)
 au FileType go nmap <C-r> <Plug>(go-run)
 au FileType go nmap <C-b> <Plug>(go-build)
 au FileType go nmap <C-t> <Plug>(go-test)
