@@ -73,7 +73,7 @@ else
 	set makeprg=make
 endif
 
-au FileType cpp nmap <C-b> :!sh build.sh <CR>
+au FileType cpp nmap <C-b> :make -j5 <CR>
 
 "CtrlP
 let g:ctrlp_working_path_mode = 'ra'
