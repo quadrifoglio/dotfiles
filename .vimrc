@@ -67,13 +67,7 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 "C/C++ compiling
-if has("win32")
-	set makeprg=mingw32-make
-else
-	set makeprg=make
-endif
-
-au FileType cpp nmap <C-b> :make -j5 <CR>
+set makeprg=ninja
 
 "CtrlP
 let g:ctrlp_working_path_mode = 'ra'
