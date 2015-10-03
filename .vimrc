@@ -68,6 +68,8 @@ nmap <silent> <A-Right> :wincmd l<CR>
 
 "C/C++ compiling
 set makeprg=ninja
+au FileType cpp nmap <C-b> :make<CR>
+au FileType c nmap <C-b> :make<CR>
 
 "CtrlP
 let g:ctrlp_working_path_mode = 'ra'
