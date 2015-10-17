@@ -11,6 +11,8 @@ if has("gui_running")
 	endif
 endif
 
+set t_Co=256
+
 "Basic settings
 set backspace=2
 set nocompatible
@@ -32,7 +34,7 @@ call vundle#begin(path)
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tomasr/molokai'
+Plugin 'sickill/vim-monokai'
 Plugin 'kien/ctrlp.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jiangmiao/auto-pairs'
@@ -47,7 +49,7 @@ filetype plugin indent on
 
 "Color
 syntax on
-colorscheme molokai
+colorscheme monokai
 let g:molokai_original = 1
 
 "Status bar
