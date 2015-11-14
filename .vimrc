@@ -11,11 +11,13 @@ if has("gui_running")
 	endif
 endif
 
-set t_Co=256
+if !has("nvim")
+	set nocompatible
+endif
 
 "Basic settings
+set t_Co=256
 set backspace=2
-set nocompatible
 set pastetoggle=<F2>
 set tabstop=4
 set softtabstop=4
@@ -50,7 +52,7 @@ filetype plugin indent on
 "Color
 syntax on
 colorscheme monokai
-let g:molokai_original = 1
+hi NonText ctermbg=none
 
 "Status bar
 set laststatus=2
