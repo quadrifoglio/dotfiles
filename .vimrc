@@ -45,6 +45,7 @@ Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'wting/rust.vim'
+Plugin 'othree/html5.vim'
 
 call vundle#end()
 filetype plugin indent on
