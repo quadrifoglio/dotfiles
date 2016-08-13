@@ -54,6 +54,7 @@ filetype plugin indent on
 syntax on
 colorscheme monokai
 let g:airline_theme='molokai'
+hi NonText ctermbg=none
 
 "Status bar
 set laststatus=2
