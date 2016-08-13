@@ -42,6 +42,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'fatih/vim-go'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
@@ -52,7 +53,7 @@ filetype plugin indent on
 "Color
 syntax on
 colorscheme monokai
-hi NonText ctermbg=none
+let g:airline_theme='molokai'
 
 "Status bar
 set laststatus=2
