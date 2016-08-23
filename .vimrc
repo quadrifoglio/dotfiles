@@ -60,13 +60,6 @@ hi NonText ctermbg=none
 set laststatus=2
 
 "Shortcuts
-nmap <S-t> :tabnew <CR>
-nmap <S-Left> :tabprev <CR>
-nmap <S-Right> :tabnext <CR>
-
-nmap <silent> <C-S-Left> :bprevious<CR>
-nmap <silent> <C-S-Right> :bnext<CR>
-
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
@@ -82,11 +75,7 @@ let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/build,*/bin
 
 "Go
-au FileType go nmap <C-i> <Plug>(go-install)
-au FileType go nmap <C-r> <Plug>(go-run)
 au FileType go nmap <C-b> <Plug>(go-build)
-au FileType go nmap <C-t> <Plug>(go-test)
-au FileType go nmap <C-c> <Plug>(go-coverage)
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
