@@ -46,6 +46,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
+Bundle 'zah/nim.vim'
 
 call vundle#end()
 filetype plugin indent on
