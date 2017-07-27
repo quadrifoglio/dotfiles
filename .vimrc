@@ -20,6 +20,9 @@ filetype plugin indent on
 let g:despacio_Midnight = 1
 colorscheme despacio 
 
+" Reset rust docblock background color
+autocmd BufRead,BufNewFile *.rs highlight SpecialComment cterm=NONE
+
 " Fix wrong background color when scrolling
 if &term =~ '256color'
 	set t_ut=
