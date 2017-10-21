@@ -12,6 +12,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'AlessandroYorba/Despacio'
 Plugin 'rust-lang/rust.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ElmCast/elm-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -42,3 +43,12 @@ noremap   <Right>  <NOP>
 " with the > and < keys
 vnoremap > ><CR>gv
 vnoremap < <<CR>gv 
+
+" Elm
+au BufRead,BufNewFile *.elm set filetype=elm
+au BufRead,BufNewFile *.elm set noai nosi nocin inde=
+au BufRead,BufNewFile *.elm nnoremap <C-b> :ElmMake<CR>
+
+let g:elm_format_autosave = 1
+let g:elm_jump_to_error = 0
+let g:elm_make_output_file = "webroot/app.js"
