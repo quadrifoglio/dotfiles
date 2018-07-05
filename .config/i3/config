@@ -1,0 +1,11 @@
+# Application launcher
+bindsym $mod+d exec "rofi -color-normal \\"#292929,#eaeec8,#292929,#6495ed,#eaeec8\\" -color-window \\"#1c1c1c,#1c1c1c,#1c1c1c\\" -show run"
+
+# Wallpaper
+exec --no-startup-id feh --bg-center /home/quadrifoglio/Images/wallpaper.jpg
+
+# Screenshot
+bindsym --release Print exec "scrot -z -s -e 'mv $f ~/Images/screenshots/'"
+
+# Lockscreen
+bindsym --release $mod+Shit+L exec "i3lock -i /home/quadrifoglio/Images/lockscreen.png"
