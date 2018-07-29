@@ -1,4 +1,6 @@
 syntax enable
+colorscheme default
+
 filetype plugin on
 
 set number
