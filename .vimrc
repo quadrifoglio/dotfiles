@@ -5,6 +5,7 @@ filetype plugin on
 
 set number
 set laststatus=2
+set nowrap
 
 set path=**
 set wildmenu
@@ -29,3 +30,15 @@ call plug#end()
 
 " Rust
 let g:rustfmt_autosave = 1
+
+" waf build system
+autocmd BufRead,BufNewFile wscript set filetype=python
+
+" leader bindings
+let mapleader = "m"
+
+map <Leader>e :e **/*
+
+au BufRead,BufNewFile *.rs map <Leader>c :Cargo c<CR>
+au BufRead,BufNewFile *.rs map <Leader>t :Cargo t<CR>
+au BufRead,BufNewFile *.rs map <Leader>r :Cargo r<CR>
