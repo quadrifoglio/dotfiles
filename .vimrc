@@ -25,6 +25,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'elmcast/elm-vim'
 Plug 'mzlogin/vim-smali'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
@@ -42,3 +43,6 @@ map <Leader>e :e **/*
 au BufRead,BufNewFile *.rs map <Leader>c :Cargo c<CR>
 au BufRead,BufNewFile *.rs map <Leader>t :Cargo t<CR>
 au BufRead,BufNewFile *.rs map <Leader>r :Cargo r<CR>
+
+au BufRead,BufNewFile *.go map <Leader>c :GoBuild<CR>
+au BufRead,BufNewFile *.go map <Leader>r :GoRun<CR>
