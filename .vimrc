@@ -50,6 +50,7 @@ au BufRead,BufNewFile *.go map <Leader>c :GoBuild<CR>
 au BufRead,BufNewFile *.go map <Leader>r :GoRun<CR>
 
 " LaTeX
+set tw=80
 let g:vimtex_compiler_method = 'tectonic'
 
 au BufRead,BufNewFile *.tex map <Leader>c <plug>(vimtex-compile)
