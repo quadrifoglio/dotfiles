@@ -9,7 +9,7 @@ set nowrap
 
 set path=**
 set wildmenu
-set wildignore=**/target/**,**/node_modules/**
+set wildignore=**/target/**,**/node_modules/**,**/build/**
 
 set autoindent
 set expandtab smarttab
@@ -23,12 +23,15 @@ set autoread
 call plug#begin('~/.vim/plugged')
 
 Plug 'rust-lang/rust.vim'
-Plug 'elmcast/elm-vim'
-Plug 'mzlogin/vim-smali'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'lervag/vimtex'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
+
+" Color scheme
+set background=dark
+colorscheme hybrid
 
 " Rust
 let g:rustfmt_autosave = 1
@@ -48,6 +51,8 @@ au BufRead,BufNewFile *.rs map <Leader>r :Cargo r<CR>
 
 au BufRead,BufNewFile *.go map <Leader>c :GoBuild<CR>
 au BufRead,BufNewFile *.go map <Leader>r :GoRun<CR>
+
+au BufRead,BufNewFile *.c,*.h map <Leader>c :!clear && ./waf build<CR>
 
 " LaTeX
 set tw=80

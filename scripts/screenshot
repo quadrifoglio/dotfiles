@@ -1,0 +1,3 @@
+#!/bin/sh
+
+scrot -z -s -e 'mv $f /home/clement/images/screenshots'
